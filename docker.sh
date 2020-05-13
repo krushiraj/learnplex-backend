@@ -7,7 +7,11 @@ start() {
 
   echo
   echo "STARTING CONTAINERS"
-    docker-compose up -d database redis
+    docker-compose up -d postgres pgadmin redis
+
+  echo
+  echo "FIRING UP PG_ADMIN"
+    docker exec -it learnplex-backend_pgadmin_1 python /pgadmin4/setup.py --load-servers /tmp/servers.json
 
   echo
   echo "DONE, STATUS:"
