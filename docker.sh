@@ -7,7 +7,7 @@ start() {
 
   echo
   echo "STARTING CONTAINERS"
-    docker-compose up -d database
+    docker-compose up -d database redis
 
   echo
   echo "DONE, STATUS:"
